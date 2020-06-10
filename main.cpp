@@ -14,12 +14,12 @@ int main() {
     
     string cancion; // Se declaran variables
     nota nt;
-    cout << "Acorde 1" << endl;
-    int num = nt.setNota();
-    int n = 0;
-    Acorde *acordes[99];
+    cout << "Acorde 1" << endl; // Comenzamos a imprimir. Esta oración nos irá indicando el número de acordes almacenados
+    int num = nt.setNota(); // Se llama a la función setNota de la clase nota, anteriormente declarada como nt
+    int n = 0;  
+    Acorde *acordes[99];    // Se establece un máximo de 99 acordes
     
-    while (num != 12){  // mun será igual a 12 cuando el usuario teclee "Fin" (ver función setNota)
+    while (num != 12){  // num será igual a 12 cuando el usuario teclee "Fin" (ver función setNota)
         int type = 6;   // Para entrar en el while. Esta variable cambiará de valor una vez dentro.
         while (1 > type or type > 5){
         type = nt.ChordType();
@@ -47,13 +47,13 @@ int main() {
         string acorde = acordes[n] -> creaAcorde(num);  // Se crea un acorde de acuerdo al objeto creado
         string c = acordes[n] -> compas();  // El usuario agrega la duración del acorde
         cancion = cancion + "\n" + acorde + c;  //  Aqui se va guardando la canción en la variable "cancion", sumando los strings obtenidos en cada vuelta del ciclo.
-        n++;
+        n++;   
         cout <<"\n" <<  "Acorde " << n+1 << endl;   //Pedimos el siguiente acorde.
         num = nt.setNota();
         
     }
     
-    cout << cancion << endl; // Una vez que el usuario teclea "FIn", se imprimen los acordes almacenados
+    cout << cancion << endl; // Una vez que el usuario teclea "Fin", se imprimen los acordes almacenados
 
     
     return 0;
